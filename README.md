@@ -4,10 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 
-## To run
+# To run
 ### yarn 
-###npm run dev 
-###npm start
+### npm run dev 
+### npm start
 
 ## Available Scripts
 
