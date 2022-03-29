@@ -2,20 +2,38 @@
   "name": "ipfs_file_upload",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "webpack serve",
+    "webpack-build": "webpack"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-loader": "^8.2.4",
+    "buffer": "^6.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "ip-address": "^8.1.0",
+    "ipfs-core": "^0.14.1",
+    "ipfs-http-client": "^56.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropzone": "^12.0.4",
+    "react-scripts": "5.0.0",
+    "react-tabs": "^4.0.1",
+    "util": "^0.12.4",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +52,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0"
   }
 }

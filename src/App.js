@@ -1,22 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import 'react-tabs/style/react-tabs.css';
+import './App.scss';
+import {useState} from 'react';
+import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
+
+import FileUpload from './Components/FileUpload'
+import FileExplorer from "./Components/FileExplorer";
 
 function App() {
+  const [data, updateData] = useState([])
+
+  const addItems = (items) => {
+    updateData([...data, ...items])
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+         <Tabs>
+            <TabList>
+              <Tab>Upload file</Tab>
+              <Tab>File list</Tab>
+            </TabList>
+
+            <TabPanel className={"tab"}>
+              <FileUpload addItems={addItems} />
+            </TabPanel>
+            <TabPanel>
+              <FileExplorer data={data}/>
+            </TabPanel>
+          </Tabs>
       </header>
     </div>
   );
