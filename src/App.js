@@ -3,9 +3,9 @@ import './App.scss';
 import {useState} from 'react';
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 
-import FileUpload from './Components/FileUpload'
-import FileExplorer from "./Components/FileExplorer";
-
+import FileUpload from './Tabs/FileUpload'
+import FileExplorer from "./Tabs/FileExplorer";
+import Transaction from './Tabs/Transaction/Transaction'
 function App() {
   const [data, updateData] = useState([])
 
@@ -14,14 +14,18 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-         <Tabs>
+    <div className="App w-full">
+      <header className="App-header w-full">
+         <Tabs className="w-full">
             <TabList>
-              <Tab>Upload file</Tab>
-              <Tab>File list</Tab>
+              <Tab>Transaction</Tab>
+              <Tab>IPFS file upload</Tab>
+              <Tab>IPFS file list</Tab>
             </TabList>
 
+           <TabPanel>
+             <Transaction />
+           </TabPanel>
             <TabPanel className={"tab"}>
               <FileUpload addItems={addItems} />
             </TabPanel>

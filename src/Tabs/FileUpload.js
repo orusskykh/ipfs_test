@@ -52,8 +52,9 @@ const FileUpload = ({addItems}) => {
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
-    <div>
-      <div {...getRootProps()} className={"dropZone-container"}>
+    <div className="m-4">
+      <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-violet">
+      <div {...getRootProps()} className=" w-full dropZone-container">
         <input {...getInputProps()} />
         {
           isDragActive ?
@@ -68,7 +69,13 @@ const FileUpload = ({addItems}) => {
             curretnFiles.map((file) => <p key={file.path}>{ file.path }</p>)}
       </div>
 
-      <button onClick={ uploadFiles } disabled={ curretnFiles === null }> upload </button>
+      <button onClick={ uploadFiles }
+              disabled={ curretnFiles === null }
+              className="input input-bordered p-1 text-slate-700 border-2 border-gray-700 rounded-md block w-full focus:ring focus:outline-none"
+      >
+        upload
+      </button>
+      </div>
     </div>
 
   )
