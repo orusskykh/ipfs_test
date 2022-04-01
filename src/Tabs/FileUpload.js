@@ -53,8 +53,8 @@ const FileUpload = ({addItems}) => {
 
   return (
     <div className="m-4">
-      <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-violet">
-      <div {...getRootProps()} className=" w-full dropZone-container">
+      <div className="credit-card p-4 w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
+      <div {...getRootProps()} className=" w-full dropZone-container text-slate-700">
         <input {...getInputProps()} />
         {
           isDragActive ?
@@ -63,7 +63,7 @@ const FileUpload = ({addItems}) => {
         }
       </div>
 
-      <div>
+      <div className=" w-full p-4  text-slate-700">
         {isLoading ? <p> LOADING... </p> :
           curretnFiles === null ? <p> select files </p> :
             curretnFiles.map((file) => <p key={file.path}>{ file.path }</p>)}
